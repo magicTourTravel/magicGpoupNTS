@@ -101,9 +101,7 @@ export default function HomeScreen({ onOpen }: Props) {
             <span className="hs-card-num">{card.num}</span>
             <span className="hs-card-name-row">
               <span className="hs-card-name">{card.name}</span>
-              {"badge" in card && card.badge
-                ? <span className="hs-card-badge">{card.badge}</span>
-                : <span className="hs-card-arrow">⟶</span>}
+              <span className="hs-card-arrow">⟶</span>
             </span>
             <span className="hs-card-hint">{card.hint}</span>
           </button>
