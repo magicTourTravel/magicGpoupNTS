@@ -91,10 +91,9 @@ const IconBuilding = () => (
 const ICONS = [IconCar, IconCar, IconHeart, IconTrophy, IconHome, IconKey, IconCross, IconPlane, IconBox, IconBriefcase, IconBuilding];
 
 const PROCESS = [
-  { num: "01", title: "Консультация",   desc: "Обсуждаем ваши потребности, риски и бюджет — без давления" },
+  { num: "01", title: "Консультация",   desc: "Обсуждаем ваши потребности, риски и бюджет" },
   { num: "02", title: "Подбор полиса",  desc: "Сравниваем предложения ведущих страховщиков России" },
   { num: "03", title: "Оформление",     desc: "Документы онлайн за 10–15 минут или лично — как удобно" },
-  { num: "04", title: "Поддержка",      desc: "Помогаем при страховом случае от первого звонка до выплаты" },
 ];
 
 const FAQS = [

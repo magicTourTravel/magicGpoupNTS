@@ -32,7 +32,6 @@ const CARDS = [
     name: "Страхование",
     hint: "Все виды страхования",
     locked: false,
-    badge: "в разработке",
   },
 ];
 

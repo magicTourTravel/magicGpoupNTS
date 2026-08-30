@@ -388,7 +388,7 @@
 
 .ins-process-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
   position: relative;
   margin-top: 3rem;
@@ -397,11 +397,11 @@
 .ins-process-grid::before {
   content: "";
   position: absolute;
-  top: 24px;
-  left: 12.5%;
-  right: 12.5%;
-  height: 1px;
-  background: rgba(61,114,130,0.2);
+  top: 23px;
+  left: 16.667%;
+  right: 16.667%;
+  height: 2px;
+  background: rgba(61,114,130,0.3);
   z-index: 0;
 }
 
