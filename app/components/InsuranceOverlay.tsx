@@ -192,7 +192,7 @@ export default function InsuranceOverlay({ p, textVisible, onOpenModal }: Props)
       <div className="ins-stats-bar">
         <div className="ins-stats-bar-inner">
           <div className="ins-stat-item ins-reveal" data-delay="0">
-            <div className="ins-stat-big">11+</div>
+            <div className="ins-stat-big">9+</div>
             <div className="ins-stat-desc">Видов страхования</div>
           </div>
           <div className="ins-stat-item ins-reveal" data-delay="0.12">
@@ -218,27 +218,23 @@ export default function InsuranceOverlay({ p, textVisible, onOpenModal }: Props)
                 <div key={item.name} className="ins-card ins-reveal" data-delay={String((i % 4) * 0.1)}>
                   <div className="ins-card-icon">
                     {i === 0
-                      ? <img src="/icons/kasko.png" alt="КАСКО" style={{display:"block"}} />
+                      ? <img src="/icons/kasko.png" alt="Автострахование" style={{display:"block"}} />
                       : i === 1
-                      ? <img src="/icons/ocago.png" alt="ОСАГО" style={{display:"block"}} />
+                      ? <img src="/icons/DMS.png" alt="ДМС" style={{display:"block"}} />
                       : i === 2
-                      ? <img src="/icons/NS.png" alt="НС" style={{display:"block"}} />
+                      ? <img src="/icons/house.png" alt="Имущество" style={{display:"block"}} />
                       : i === 3
                       ? <img src="/icons/sport.png" alt="Спорт" style={{display:"block"}} />
                       : i === 4
-                      ? <img src="/icons/house.png" alt="Дом" style={{display:"block"}} />
+                      ? <img src="/icons/business.png" alt="Бизнес" style={{display:"block"}} />
                       : i === 5
-                      ? <img src="/icons/ipoteka.png" alt="Ипотека" style={{display:"block"}} />
+                      ? <img src="/icons/abroad.png" alt="Туризм" style={{display:"block"}} />
                       : i === 6
-                      ? <img src="/icons/DMS.png" alt="ДМС" style={{display:"block"}} />
+                      ? <img src="/icons/ipoteka.png" alt="Ипотека" style={{display:"block"}} />
                       : i === 7
-                      ? <img src="/icons/abroad.png" alt="Выезжающим" style={{display:"block"}} />
-                      : i === 8
                       ? <img src="/icons/freightTransportation.png" alt="Грузы" style={{display:"block"}} />
-                      : i === 9
-                      ? <img src="/icons/business.png" alt="МСБ" style={{display:"block"}} />
-                      : i === 10
-                      ? <img src="/icons/AssetsOfLegalEntities.png" alt="Имущество юр. лиц" style={{display:"block"}} />
+                      : i === 8
+                      ? <img src="/icons/NS.png" alt="НС" style={{display:"block"}} />
                       : <Icon />}
                   </div>
                   <span className="ins-card-num">{item.icon}</span>
