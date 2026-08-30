@@ -267,36 +267,6 @@ export default function InsuranceOverlay({ p, textVisible, onOpenModal }: Props)
       </section>
 
       {/* ══ WHY US ══ */}
-      <section className="ins-why">
-        <div className="ins-wrap">
-          <div className="ins-why-grid">
-            {/* Photo */}
-            <div className="ins-why-photo-wrap ins-reveal ins-reveal--from-left">
-              <img
-                className="ins-why-photo"
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=900&auto=format&fit=crop"
-                alt="Консультация по страхованию"
-              />
-              <div className="ins-why-photo-badge">Ваш личный агент</div>
-            </div>
-            {/* Text */}
-            <div className="ins-why-text ins-reveal ins-reveal--from-right" data-delay="0.15">
-              <div className="ins-eyebrow">Почему выбирают нас</div>
-              <h2 className="ins-why-title">
-                Не просто агент —<br />ваш партнёр
-              </h2>
-              <p className="ins-why-body">{p.body[1]}</p>
-              <div className="ins-tags">
-                {p.tags.map(t => <span key={t} className="ins-tag">{t}</span>)}
-              </div>
-              <button className="ins-btn-primary" onClick={onOpenModal}>
-                Получить консультацию
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ══ FAQ ══ */}
       <section className="ins-faq">
         <div className="ins-wrap">
