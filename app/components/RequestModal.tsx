@@ -393,7 +393,7 @@ export default function RequestModal({
           <div className="modal-field-wrap">
             <textarea
               className="modal-input modal-textarea"
-              placeholder="Сообщение (необязательно) — куда хотите поехать, даты, пожелания…"
+              placeholder="Сообщение (необязательно) — задайте ваш вопрос или опишите пожелания…"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               rows={3}
