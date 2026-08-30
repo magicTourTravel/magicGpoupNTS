@@ -253,19 +253,25 @@ export default function InsuranceOverlay({ p, textVisible, onOpenModal }: Props)
         <div className="ins-wrap">
           <div className="ins-eyebrow ins-reveal">Как это работает</div>
           <h2 className="ins-section-title ins-reveal" data-delay="0.1">От запроса до полиса — 3 шага</h2>
-          <div className="ins-process-grid">
+          <div className="ins-process-row">
             {PROCESS.map((step, i) => (
-              <div key={step.num} className="ins-step ins-reveal" data-delay={String(i * 0.13)}>
-                <div className="ins-step-circle">{step.num}</div>
-                <div className="ins-step-title">{step.title}</div>
-                <div className="ins-step-desc">{step.desc}</div>
+              <div
+                className="ins-process-item ins-reveal"
+                data-delay={String(i * 0.13)}
+                key={step.num}
+              >
+                <div className="ins-process-card">
+                  <span className="ins-process-num">{step.num}</span>
+                  <div className="ins-process-title">{step.title}</div>
+                  <div className="ins-process-desc">{step.desc}</div>
+                </div>
+                {i < PROCESS.length - 1 && <span className="ins-process-chevron">›</span>}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ══ WHY US ══ */}
       {/* ══ FAQ ══ */}
       <section className="ins-faq">
         <div className="ins-wrap">
