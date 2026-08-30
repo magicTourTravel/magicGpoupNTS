@@ -443,6 +443,7 @@
 
 @media (max-width: 900px) {
   .ins-process-row { flex-direction: column; }
+  .ins-process-item { flex-direction: column; }
   .ins-process-chevron { transform: rotate(90deg); width: 100%; padding: 0.4rem 0; }
 }
 
