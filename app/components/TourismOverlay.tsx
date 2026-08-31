@@ -600,7 +600,7 @@ export default function TourismOverlay({ p, onOpenModal, onOpenTours }: Props) {
                   {item.description && <p className="t-row__p">{item.description}</p>}
                   {i === 0 && (
                     <button className="t-btn t-btn--outline-dark t-btn--sm" onClick={onOpenModal}>
-                      Смотреть путёвки <span className="t-btn__arr" aria-hidden="true"><svg className="t-btn__arr-svg" viewBox="0 0 38 8" fill="none" xmlns="http://www.w3.org/2000/svg"><line className="t-btn__arr-shaft" x1="0" y1="4" x2="28" y2="4" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/><path className="t-btn__arr-tip" d="M23.5 1L28 4L23.5 7" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
+                      Подобрать путёвку <span className="t-btn__arr" aria-hidden="true"><svg className="t-btn__arr-svg" viewBox="0 0 38 8" fill="none" xmlns="http://www.w3.org/2000/svg"><line className="t-btn__arr-shaft" x1="0" y1="4" x2="28" y2="4" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/><path className="t-btn__arr-tip" d="M23.5 1L28 4L23.5 7" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
                     </button>
                   )}
                   {i === 1 && (
@@ -610,7 +610,7 @@ export default function TourismOverlay({ p, onOpenModal, onOpenTours }: Props) {
                   )}
                   {i === 2 && (
                     <button className="t-btn t-btn--outline-dark t-btn--sm" onClick={onOpenModal}>
-                      Авиабилеты и отели <span className="t-btn__arr" aria-hidden="true"><svg className="t-btn__arr-svg" viewBox="0 0 38 8" fill="none" xmlns="http://www.w3.org/2000/svg"><line className="t-btn__arr-shaft" x1="0" y1="4" x2="28" y2="4" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/><path className="t-btn__arr-tip" d="M23.5 1L28 4L23.5 7" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
+                      Подобрать билеты и отель <span className="t-btn__arr" aria-hidden="true"><svg className="t-btn__arr-svg" viewBox="0 0 38 8" fill="none" xmlns="http://www.w3.org/2000/svg"><line className="t-btn__arr-shaft" x1="0" y1="4" x2="28" y2="4" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/><path className="t-btn__arr-tip" d="M23.5 1L28 4L23.5 7" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
                     </button>
                   )}
                 </div>
