@@ -1,13 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import SmoothScroll from "./components/SmoothScroll";
 import RequestModal from "./components/RequestModal";
-import TourismOverlay from "./components/TourismOverlay";
-import RealtyOverlay from "./components/RealtyOverlay";
-import InsuranceOverlay from "./components/InsuranceOverlay";
-import TourDrawer from "./components/TourDrawer";
 import HomeScreen from "./components/HomeScreen";
+
+// Код и фото каждого раздела грузятся только когда раздел реально открыт,
+// а не все сразу на главном экране.
+const TourismOverlay = dynamic(() => import("./components/TourismOverlay"));
+const RealtyOverlay = dynamic(() => import("./components/RealtyOverlay"));
+const InsuranceOverlay = dynamic(() => import("./components/InsuranceOverlay"));
+const TourDrawer = dynamic(() => import("./components/TourDrawer"));
 
 type PanelId = "tourism" | "insurance" | "realty";
 type SocialLink = { label: string; href: string };
@@ -400,13 +404,15 @@ export default function Home() {
           services={p.services.items}
         />
       )}
-      <TourDrawer
-        isOpen={tourDrawerOpen}
-        onClose={() => setTourDrawerOpen(false)}
-        onBook={() => {
-          setModalOpen(true);
-        }}
-      />
+      {active === "tourism" && (
+        <TourDrawer
+          isOpen={tourDrawerOpen}
+          onClose={() => setTourDrawerOpen(false)}
+          onBook={() => {
+            setModalOpen(true);
+          }}
+        />
+      )}
 
     </>
   );

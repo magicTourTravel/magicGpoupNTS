@@ -1,23 +1,11 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans, Inter, Jost, Oswald, Playfair_Display } from "next/font/google";
+import { Inter, Jost, Oswald, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 // next/font/google скачивает шрифты при сборке и раздаёт с собственного домена —
 // Google Fonts CDN не нужен. Работает в России без ограничений.
-const syne = Syne({
-  subsets: ["latin"],          // Syne — только латиница; кириллица упадёт на Inter
-  weight: ["600", "700", "800"],
-  variable: "--font-syne",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],          // DM Sans не имеет кириллицы; кириллица → Inter
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-dm-sans",
-  display: "swap",
-});
-
+// Syne и DM Sans убраны — использовались только в неподключённом черновике
+// TourismOverlay.hakki.tsx, а не в реальных страницах.
 const inter = Inter({
   subsets: ["latin", "cyrillic"], // Inter — полная кириллица
   weight: ["300", "400", "500", "600"],
@@ -96,7 +84,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={`h-full ${syne.variable} ${dmSans.variable} ${inter.variable} ${jost.variable} ${oswald.variable} ${playfair.variable}`}>
+    <html lang="ru" className={`h-full ${inter.variable} ${jost.variable} ${oswald.variable} ${playfair.variable}`}>
       <body>{children}</body>
     </html>
   );

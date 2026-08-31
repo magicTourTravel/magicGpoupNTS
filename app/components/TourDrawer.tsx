@@ -13,11 +13,13 @@ interface Props {
 export default function TourDrawer({ isOpen, onClose, onBook }: Props) {
   const [selectedTour, setSelectedTour] = useState<Tour | null>(null);
   const [activeCountry, setActiveCountry] = useState<string>(ALL_COUNTRIES[0]);
+  const [hasOpened, setHasOpened] = useState(false);
 
   /* lock scroll when open */
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      setHasOpened(true);
     } else {
       document.body.style.overflow = "";
       setTimeout(() => { setSelectedTour(null); }, 300);
@@ -53,10 +55,9 @@ export default function TourDrawer({ isOpen, onClose, onBook }: Props) {
           <button className="td-close" onClick={onClose} aria-label="Закрыть">✕</button>
         </div>
 
-        {/* Content */}
+        {/* Content — deferred until first open so tour photos aren't fetched eagerly */}
         <div className="td-body">
-
-          {!selectedTour ? (
+          {hasOpened && (!selectedTour ? (
             /* ── LIST VIEW ── */
             <>
               {/* Country tabs */}
@@ -176,7 +177,7 @@ export default function TourDrawer({ isOpen, onClose, onBook }: Props) {
                 </button>
               </div>
             </div>
-          )}
+          ))}
         </div>
       </aside>
     </>
