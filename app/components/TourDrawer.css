@@ -144,18 +144,44 @@
 
 /* ── Tour list ── */
 .td-tour-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
+  display: grid;
+  grid-auto-rows: 1fr; /* все карточки одной высоты — по самой высокой */
+  gap: 4px;
   padding: 1rem 1.5rem;
 }
 .td-pricing .td-empty { padding: 1.2rem 0 1rem; }
+.td-tour-promo {
+  color: #9B2335 !important;
+  font-weight: 800 !important;
+  font-size: 0.85rem !important;
+  margin-left: auto;
+}
+.td-promo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  justify-content: flex-start;
+  padding: 0.9rem 0 1.1rem;
+  color: #9B2335;
+}
+.td-promo__note {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.td-promo__price {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1;
+}
 .td-btn-book--price { margin-bottom: 0.25rem; }
 .td-list-heading {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--td-dark);
-  margin: 0.25rem 0 0.9rem;
+  padding: 1.25rem 1.5rem 0;
+  margin: 0 0 -0.25rem;
 }
 .td-extra {
   margin: 0.5rem 1.5rem 2rem;
@@ -196,7 +222,6 @@
   text-align: left;
   overflow: hidden;
   transition: border-color 0.22s, background 0.22s;
-  margin-bottom: 4px;
 }
 .td-tour-card:hover {
   border-color: rgba(201, 169, 110, 0.45);

@@ -74,10 +74,10 @@ export default function TourDrawer({ isOpen, onClose, onBook }: Props) {
               </div>
 
               {/* Tour cards */}
+              {activeCountry === "Таиланд" && tours.length > 0 && (
+                <p className="td-list-heading">Куда можно слетать из Пхукета:</p>
+              )}
               <div className="td-tour-list">
-                {activeCountry === "Таиланд" && tours.length > 0 && (
-                  <p className="td-list-heading">Куда можно слетать из Пхукета:</p>
-                )}
                 {tours.length === 0 ? (
                   <p className="td-empty">Туры скоро появятся</p>
                 ) : (
@@ -94,6 +94,9 @@ export default function TourDrawer({ isOpen, onClose, onBook }: Props) {
                         {tour.tagline && <p className="td-tour-tagline">{tour.tagline}</p>}
                         <div className="td-tour-meta">
                           <span>📍 {tour.location}</span>
+                          {tour.promo && (
+                            <span className="td-tour-promo">{tour.promo.price} {tour.promo.unit}</span>
+                          )}
                         </div>
                       </div>
                       <span className="td-tour-arrow">→</span>
@@ -152,28 +155,45 @@ export default function TourDrawer({ isOpen, onClose, onBook }: Props) {
                 <p className="td-section-label">Стоимость на человека</p>
                 {/* Цены в tours.ts (pricing) сейчас не показываем — стоимость у всех туров по запросу */}
                 <div className="td-pricing">
-                  <p className="td-empty">Стоимость — по запросу. Оставьте заявку, и мы пришлём расчёт.</p>
-                  <button className="td-btn-book td-btn-book--price" onClick={() => { onBook(selectedTour.name); onClose(); }}>
-                    Узнать стоимость
-                  </button>
+                  {selectedTour.promo ? (
+                    <div className="td-promo">
+                      <span className="td-promo__price">{selectedTour.promo.price}</span>
+                      {selectedTour.promo.note && (
+                        <span className="td-promo__note">{selectedTour.promo.note}</span>
+                      )}
+                    </div>
+                  ) : (
+                    <p className="td-empty">Стоимость — по запросу. Оставьте заявку, и мы пришлём расчёт.</p>
+                  )}
+                  {!selectedTour.promo && (
+                    <button className="td-btn-book td-btn-book--price" onClick={() => { onBook(selectedTour.name); onClose(); }}>
+                      Узнать стоимость
+                    </button>
+                  )}
                 </div>
               </div>
 
               {/* Includes / Excludes */}
-              <div className="td-section td-section--two-col">
-                <div>
-                  <p className="td-section-label">Включено</p>
-                  <ul className="td-check-list td-check-list--yes">
-                    {selectedTour.includes.map((item, i) => <li key={i}>{item}</li>)}
-                  </ul>
+              {(selectedTour.includes.length > 0 || selectedTour.excludes.length > 0) && (
+                <div className="td-section td-section--two-col">
+                  {selectedTour.includes.length > 0 && (
+                    <div>
+                      <p className="td-section-label">Включено</p>
+                      <ul className="td-check-list td-check-list--yes">
+                        {selectedTour.includes.map((item, i) => <li key={i}>{item}</li>)}
+                      </ul>
+                    </div>
+                  )}
+                  {selectedTour.excludes.length > 0 && (
+                    <div>
+                      <p className="td-section-label">Не включено</p>
+                      <ul className="td-check-list td-check-list--no">
+                        {selectedTour.excludes.map((item, i) => <li key={i}>{item}</li>)}
+                      </ul>
+                    </div>
+                  )}
                 </div>
-                <div>
-                  <p className="td-section-label">Не включено</p>
-                  <ul className="td-check-list td-check-list--no">
-                    {selectedTour.excludes.map((item, i) => <li key={i}>{item}</li>)}
-                  </ul>
-                </div>
-              </div>
+              )}
 
               {/* CTA */}
               <div className="td-cta">
