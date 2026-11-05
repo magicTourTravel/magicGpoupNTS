@@ -25,7 +25,7 @@ export interface Tour {
 }
 
 /* Все страны, включая те где туры ещё не добавлены */
-export const ALL_COUNTRIES = ["Азербайджан", "Индия", "Турция", "Вьетнам", "Таиланд"] as const;
+export const ALL_COUNTRIES = ["Азербайджан", "Турция", "Таиланд", "Вьетнам", "Индия"] as const;
 
 export const TOURS: Tour[] = [
   {

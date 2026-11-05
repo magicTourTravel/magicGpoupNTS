@@ -94,9 +94,6 @@ export default function TourDrawer({ isOpen, onClose, onBook }: Props) {
                         {tour.tagline && <p className="td-tour-tagline">{tour.tagline}</p>}
                         <div className="td-tour-meta">
                           <span>📍 {tour.location}</span>
-                          {tour.pricing.length > 0 && (
-                            <span className="td-tour-price-from">от {tour.pricing[tour.pricing.length - 1].price}</span>
-                          )}
                         </div>
                       </div>
                       <span className="td-tour-arrow">→</span>
@@ -107,12 +104,12 @@ export default function TourDrawer({ isOpen, onClose, onBook }: Props) {
 
               {activeCountry === "Таиланд" && (
                 <div className="td-extra">
-                  <p className="td-extra-title">Есть и обычные экскурсии по Таиланду</p>
+                  <p className="td-extra-title">Трансферы из любого аэропорта Таиланда</p>
                   <p className="td-extra-text">
-                    А ещё организуем трансферы из любого аэропорта. Напишите, что вам нужно, и мы всё подберём.
+                    Организуем трансфер из любого аэропорта. Напишите, откуда и куда вам нужно, и мы подберём вариант.
                   </p>
-                  <button className="td-btn-book" onClick={() => { onBook("Таиланд"); onClose(); }}>
-                    Задать вопрос
+                  <button className="td-btn-book" onClick={() => { onBook("Трансфер"); onClose(); }}>
+                    Заказать трансфер
                   </button>
                 </div>
               )}
@@ -153,16 +150,12 @@ export default function TourDrawer({ isOpen, onClose, onBook }: Props) {
               {/* Pricing */}
               <div className="td-section">
                 <p className="td-section-label">Стоимость на человека</p>
+                {/* Цены в tours.ts (pricing) сейчас не показываем — стоимость у всех туров по запросу */}
                 <div className="td-pricing">
-                  {selectedTour.pricing.length === 0 && (
-                    <p className="td-empty">Стоимость — по запросу. Оставьте заявку, и мы пришлём расчёт.</p>
-                  )}
-                  {selectedTour.pricing.map((row, i) => (
-                    <div key={i} className={`td-pricing-row${i === 0 ? " td-pricing-row--hi" : ""}`}>
-                      <span>{row.group}</span>
-                      <span className="td-pricing-price">{row.price}</span>
-                    </div>
-                  ))}
+                  <p className="td-empty">Стоимость — по запросу. Оставьте заявку, и мы пришлём расчёт.</p>
+                  <button className="td-btn-book td-btn-book--price" onClick={() => { onBook(selectedTour.name); onClose(); }}>
+                    Узнать стоимость
+                  </button>
                 </div>
               </div>
 
