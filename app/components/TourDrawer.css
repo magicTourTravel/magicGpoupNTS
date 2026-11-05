@@ -149,6 +149,31 @@
   gap: 1px;
   padding: 1rem 1.5rem;
 }
+.td-list-heading {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--td-dark);
+  margin: 0.25rem 0 0.9rem;
+}
+.td-extra {
+  margin: 0.5rem 1.5rem 2rem;
+  padding: 1.4rem 1.3rem;
+  border: 1px solid var(--td-border);
+  border-radius: 6px;
+  background: rgba(28, 26, 22, 0.02);
+}
+.td-extra-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--td-dark);
+  margin-bottom: 0.4rem;
+}
+.td-extra-text {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--td-text);
+  margin-bottom: 1.1rem;
+}
 .td-empty {
   color: rgba(28, 26, 22, 0.3);
   font-size: 0.9rem;

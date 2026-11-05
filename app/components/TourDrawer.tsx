@@ -75,6 +75,9 @@ export default function TourDrawer({ isOpen, onClose, onBook }: Props) {
 
               {/* Tour cards */}
               <div className="td-tour-list">
+                {activeCountry === "Таиланд" && tours.length > 0 && (
+                  <p className="td-list-heading">Куда можно слетать из Пхукета:</p>
+                )}
                 {tours.length === 0 ? (
                   <p className="td-empty">Туры скоро появятся</p>
                 ) : (
@@ -101,6 +104,18 @@ export default function TourDrawer({ isOpen, onClose, onBook }: Props) {
                   ))
                 )}
               </div>
+
+              {activeCountry === "Таиланд" && (
+                <div className="td-extra">
+                  <p className="td-extra-title">Есть и обычные экскурсии по Таиланду</p>
+                  <p className="td-extra-text">
+                    А ещё организуем трансферы из любого аэропорта. Напишите, что вам нужно, и мы всё подберём.
+                  </p>
+                  <button className="td-btn-book" onClick={() => { onBook("Таиланд"); onClose(); }}>
+                    Задать вопрос
+                  </button>
+                </div>
+              )}
             </>
           ) : (
             /* ── DETAIL VIEW ── */
@@ -139,6 +154,9 @@ export default function TourDrawer({ isOpen, onClose, onBook }: Props) {
               <div className="td-section">
                 <p className="td-section-label">Стоимость на человека</p>
                 <div className="td-pricing">
+                  {selectedTour.pricing.length === 0 && (
+                    <p className="td-empty">Стоимость — по запросу. Оставьте заявку, и мы пришлём расчёт.</p>
+                  )}
                   {selectedTour.pricing.map((row, i) => (
                     <div key={i} className={`td-pricing-row${i === 0 ? " td-pricing-row--hi" : ""}`}>
                       <span>{row.group}</span>
